@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Periscope</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+    <script src="client/dependencies/mustache.js"></script>
+    <script src="client/dependencies/chevron.js"></script>
+  </head>
+  <body>
+    <link href="client/templates/template.mustache" rel="template" id="templateName"/>
+    <script>
+
+    $("#templateName").Chevron("render", {name: "Slim Shay"}, function(result){
+    // do something with 'result'
+    // 'result' will contain the result of rendering the template
+    // (in this case 'result' will contain: My name is Slim Shady)
+    $('body').append(result)
+  });
+
+    </script>
+  </body>
+
+ </html>
