@@ -13,5 +13,6 @@
 
 Route::get('/', function()
 {
-	return View::make('index');
+	return './index.html';
+	//return View::make('index');
 });
