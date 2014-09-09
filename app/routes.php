@@ -17,5 +17,5 @@ Route::get('/', function()
 });
 
 Route::get('/DBTEST', function() {
-	return View::make('upgrade');
+	DB::insert('insert into email_log (email, access) values (?, ?)', array("test1", "true"));
 });
