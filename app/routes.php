@@ -16,4 +16,6 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-Route::get('/DBTEST', 'DatabaseController@createArticleLog');
+Route::get('/DBTEST', function() {
+	return View::make('upgrade');
+});
