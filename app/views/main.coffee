@@ -6,10 +6,8 @@ $(document).ready ->
     $("#email_button").on 'click', =>
       email = $("input[name='email_input']").val()
       $('.landing-wrapper').remove()
-      $('body').append("<div class='signed-up'> You'll here from us soon! </div>")
-    $("input[name='email_input']").on 'input', -> console.log('heresa'))
-
-
-  0
-
-
+      $.post(
+        "/insertEmail",
+        {email: email},
+        (data) -> if data.status is "success" then console.log "success" else console.log "failure")
+      $('body').append("<div class='signed-up'> You'll here from us soon! </div>"))

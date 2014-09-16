@@ -9,7 +9,8 @@ body{
 }
 
 h3 {
-  font-family: helvetica, sans-serif;
+  font-family: 'Merriweather', serif;
+  font-weight: light;
   font-size: 1.5em;
   color: white;
 }
@@ -58,8 +59,6 @@ h3 {
   height: 100%;
   /*margin-top: 21%;*/
   vertical-align: bottom;
-  min-width: 1200px;
-  min-height: 675px;
 }
 
 iframe {
@@ -68,7 +67,7 @@ iframe {
 }
 
 .signed-up {
-  font-family: Helvetica;
+  font-family: 'Merriweather', serif;
   font-weight: bold;
   z-index: 100px;
   position: fixed;

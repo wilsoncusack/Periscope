@@ -8,6 +8,7 @@
     <script src="<?php echo asset('main.js')?>"></script>
     <link rel="template" class="landingPage" href="<?php echo asset('Templates/landing.mustache')?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo asset('styles/main.css')?>"/>
+    <link rel='stylesheet' type='text/css' href="<?php echo asset('http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,300')?>"/>
   </head>
   <body>
   </body>
