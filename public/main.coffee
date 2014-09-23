@@ -6,8 +6,11 @@ $(document).ready ->
     $("#email_button").on 'click', =>
       email = $("input[name='email_input']").val()
       $('.landing-wrapper').remove()
-      $.post(
-        "/insertEmail",
-        {email: email},
-        (data) -> if data.status is "success" then console.log "success" else console.log "failure")
+      $.ajax
+        url: '/insertEmail',
+        type: 'POST',
+        data: {email: email},
+        dataType: 'json',
+        contentType: "application/json",
+        success: (data) -> console.log JSON.stringify(data)
       $('body').append("<div class='signed-up'> You'll here from us soon! </div>"))

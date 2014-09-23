@@ -9,13 +9,16 @@ $(document).ready(function() {
         var email;
         email = $("input[name='email_input']").val();
         $('.landing-wrapper').remove();
-        $.post("/insertEmail", {
-          email: email
-        }, function(data) {
-          if (data.status === "success") {
-            return console.log("success");
-          } else {
-            return console.log("failure");
+        $.ajax({
+          url: '/insertEmail',
+          type: 'POST',
+          data: {
+            email: email
+          },
+          dataType: 'json',
+          contentType: "application/json",
+          success: function(data) {
+            return console.log(JSON.stringify(data));
           }
         });
         return $('body').append("<div class='signed-up'> You'll here from us soon! </div>");
