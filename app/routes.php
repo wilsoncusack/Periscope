@@ -20,7 +20,8 @@ Route::get('/DBTEST', function() {
 	DB::insert('insert into email_log (email, access) values (?, ?)', array("test1", "true"));
 });
 
-Route::post('/insertEmail', function($newEmail) {
+Route::post('/insertEmail', function() {
+	$newEmail = Input::json()->all()['email'];
 	if(empty(DB::select('select * from email_log where email = ?', array($newEmail)))) {
 		if(preg_match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', $newEmail)) {
 			if(DB::insert('insert into email_log (email,access) values (?, ?)', array($newEmail, 't'))) {
