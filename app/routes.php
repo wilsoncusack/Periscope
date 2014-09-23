@@ -21,18 +21,18 @@ Route::get('/DBTEST', function() {
 });
 
 Route::post('/insertEmail', function() {
-	$newEmail = Input::json()->all()['email'];
+	//return Response::json(array("test" => "function"), 200);
 	if(empty(DB::select('select * from email_log where email = ?', array($newEmail)))) {
 		if(preg_match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', $newEmail)) {
 			if(DB::insert('insert into email_log (email,access) values (?, ?)', array($newEmail, 't'))) {
 				return Response::json(array('success' => 'Email has been entered'), 200);
 			} else {
-				return Response::json(array('error' => 'Insertion failed.'), 500);
+				return Response::json(array('error' => 'Insertion failed.'), 200);
 			}
 		} else {
-			return Response::json(array('error' => 'Not a valid email address.'), 400);
+			return Response::json(array('error' => 'Not a valid email address.'), 200);
 		}
 	} else {
-		return Response::json(array('error' => 'Email already exists.'), 400);
+		return Response::json(array('error' => 'Email already exists.'), 200);
 	}
 });
