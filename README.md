@@ -1,25 +1,35 @@
-## Laravel PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+# clojure-getting-started
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+A barebones Clojure app, which can easily be deployed to Heroku.  
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+This application support the [Getting Started with Clojure](https://devcenter.heroku.com/articles/getting-started-with-clojure) article - check it out.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Running Locally
 
-## Official Documentation
+Make sure you have Clojure installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+```sh
+$ git clone https://github.com/heroku/clojure-getting-started.git
+$ cd clojure-getting-started
+$ lein repl
+user=> (require 'clojure-getting-started.web)
+user=>(def server (clojure-getting-started.web/-main))
+```
 
-### Contributing To Laravel
+Your app should now be running on [localhost:5000](http://localhost:5000/).
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+## Deploying to Heroku
 
-### License
+```sh
+$ heroku create
+$ git push heroku master
+$ heroku open
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+## Documentation
+
+For more information about using Clojure on Heroku, see these Dev Center articles:
+
+- [Clojure on Heroku](https://devcenter.heroku.com/categories/clojure)
+

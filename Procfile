@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 public
+web: java $JVM_OPTS -cp target/periscope.jar clojure.main -m periscope.web

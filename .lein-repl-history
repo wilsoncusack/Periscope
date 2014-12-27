@@ -1,0 +1,5 @@
+(require '[clojure-getting-started.web]:reload)
+(require '[periscope.web]:reload)
+(def server (periscope.web/-main))
+(require '[periscope.web]:reload)
+(def server (periscope.web/-main))
