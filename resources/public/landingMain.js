@@ -6,9 +6,6 @@ $(document).ready(function() {
   }, (function(_this) {
     return function(result) {
       $('body').append(result);
-      $("#logo").on('click', function() {
-        return renderMain();
-      });
       $("#email_address").on('keypress', function(e) {
         var email;
         if (e.keyCode !== 13) {

@@ -2,7 +2,6 @@ $(document).ready ->
   # Loading the landing page
   $(".landingPage").Chevron("render", name: "Slim Shay", (result) =>
     $('body').append(result)
-    $("#logo").on 'click', => renderMain()
     # Listening to the email address input field
     $("#email_address").on 'keypress', (e) -> 
       return if e.keyCode isnt 13
