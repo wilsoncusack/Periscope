@@ -1,7 +1,12 @@
+Things John needs
+-Install lein `brew install lein`
+-Install postgres, if you don't already have it.
+-Install python postgres driver [psycopg2](http://initd.org/psycopg/docs/install.html)
+
 
 # clojure-getting-started
 
-A barebones Clojure app, which can easily be deployed to Heroku.  
+A barebones Clojure app, which can easily be deployed to Heroku.
 
 This application support the [Getting Started with Clojure](https://devcenter.heroku.com/articles/getting-started-with-clojure) article - check it out.
 
@@ -32,4 +37,7 @@ $ heroku open
 For more information about using Clojure on Heroku, see these Dev Center articles:
 
 - [Clojure on Heroku](https://devcenter.heroku.com/categories/clojure)
+
+
+[PSQL Indexing](http://www.postgresql.org/docs/8.3/static/textsearch-tables.html)
 

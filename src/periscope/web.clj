@@ -3,21 +3,23 @@
             [compojure.handler :refer [site]]
             [compojure.route :as route]
             [compojure.handler :as handler]
+            [controllers.email :as signup]
             [clojure.java.io :as io]
             [ring.util.response :refer [resource-response response]]
             [ring.middleware.json :as middleware]
             [ring.adapter.jetty :as jetty]
-            [models.emailMigration :as schema]
-            [controllers.email :as signup]
+            [models.emailMigration :as emailMigration]
+            [models.articleMigration :as articleMigration]
+            [periscope.admin :as admin]
             [environ.core :refer [env]]))
 
 (defroutes app-routes
   signup/routes
-
+  admin/routes
   ; root, looks in public directory and returns index.html
   (GET  "/" [] (resource-response "index.html" {:root "public"}))
+  ;(GET  "/admin" [] (resource-response "adminIndex.html" {:root "public"}))
   ; example of a get request
-  (GET  "/widgets" [] (response [{:name "Widget 1"} {:name "Widget 2"}]))
   ; receives the post request and parses input
 
   ; I think this is what is allowing all of the dependencies to be found,
@@ -36,10 +38,9 @@
 
 (defn -main [& [port]]
   "from Heroku's setup"
-  (schema/migrate)
   (let [port (Integer. (or port (env :port) 5000))]
     (jetty/run-jetty (site #'app) {:port port :join? false})))
 
 ;; For interactive development:
-;; (.stop server)
-;; (def server (-main))
+;(.stop server)
+;(def server (-main))

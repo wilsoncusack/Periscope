@@ -1,18 +1,31 @@
+@font-face {
+    font-family: 'cheltenhm'; /*a name to be used later*/
+    src: url('fonts/ichlthmn.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'cheltenhm-book-bold'; /*a name to be used later*/
+    src: url('fonts/Cheltenham\ Bold\ Headline\ BT.ttf'); /*URL to font*/
+}
+
 body{
   margin: 0px;
   padding: 0px;
 }
 
 #logo {
-  height: 127px;
-  width: 98px;
+  position: absolute;
+  left: 50%;
+  width: 90px;
+  margin-left: -45px;
 }
 
 h3 {
-  font-family: 'Merriweather', serif;
+  font-family: 'cheltenhm', serif;
   font-weight: light;
-  font-size: 1.5em;
-  color: white;
+  font-size: 1.7em;
+  color: black;
+  margin-top: 59px;
 }
 
 .landing-wrapper {
@@ -20,70 +33,62 @@ h3 {
   left: 50%;
   top: 40%;
   text-align: center;
-  margin-left: -140px;
+  margin-left: -150px;
   margin-top: -85px;
+}
+
+.inline {
+  float: left;
 }
 
 #email_address {
   width: 210px;
-  height: 20px;
+  height: 27px;
   font-family: helvetica;
   font-size: 15px;
+  line-height: 27px;
+  border: 2px solid #333;
+  margin-left: 13px;
+}
+
+input:focus {
+  outline: 0;
 }
 
 #email_button {
-  background: -webkit-linear-gradientred(#C85B5B , #BC3636); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient( #C85B5B , #BC3636); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient( #C85B5B , #BC3636); /* For Firefox 3.6 to 15 */
-  background: linear-gradient( #C85B5B , #BC3636); /* Standard syntax (must be last) */
+  background: -webkit-linear-gradientred(#333 , #111); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient( #333 , #111); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient( #333 , #111); /* For Firefox 3.6 to 15 */
+  background: linear-gradient( #333 , #111); /* Standard syntax (must be last) */
   color: white;
   font-family: helvetica;
-  font-size: 1em;
+  font-size: 15px;
   padding: 3px;
-  margin-top: 21px;
-  margin-left: 10px;
-  width: 230px;
-  height: 30px;
-  border-radius: 3px;
-  line-height: 32px;
+  width: 78px;
+  height: 27px;  
+  line-height: 27px;
   cursor: pointer;
   text-shadow: 0 1px 1px black;
 }
 
 /* video stuff */
-
-.blue {
-  position: fixed;
-  background-color: black;
-  /*background-color: hsl(210, 70%, 70%);*/
-  width: 100%;
-  height: 100%;
-  /*margin-top: 21%;*/
-  vertical-align: bottom;
-}
-
-iframe {
-  margin: 0px;
-  padding: 0px;
-}
-
 .signed-up {
-  font-family: 'Merriweather', serif;
+  font-family: 'cheltenhm', serif;
   font-weight: bold;
   z-index: 100px;
   position: fixed;
-  color: white;
-  font-size: 3em;
+  color: black;
+  font-size: 1.7em;
   top: 50%;
   margin-top: -60px;
   left: 50%;
-  margin-left: -290px;
+  margin-left: -165px;
 }
 
 .already-signed-up{
-  color: white;
-  font-family: Georgia;
-  font-size: 2em;
+  color: black;
+  font-family: 'cheltenhm', Georgia;
+  font-size: 1.4em;
   z-index: 100;
   position: fixed;
   width: 500px;
@@ -97,7 +102,7 @@ iframe {
 .error {
   color: red;
   font-family: Helvetica;
-  font-weight: bold;
+  font-weight: light;
   display: block;
   margin-top: 5px;
 }

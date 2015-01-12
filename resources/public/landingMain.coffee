@@ -4,6 +4,10 @@ $(document).ready ->
     $('body').append(result)
     $("#logo").on 'click', => renderMain()
     # Listening to the email address input field
+    $("#email_address").on 'keypress', (e) -> 
+      return if e.keyCode isnt 13
+      email = $("input[name='email_input']").val()
+      addEmail(email)
     $("#email_button").on 'click', =>
       email = $("input[name='email_input']").val()
       addEmail(email))
@@ -21,9 +25,10 @@ $(document).ready ->
             alreadyAdded()
           else 
             # server is checking for basically the same bad input, incase they make requests manually
-            $('#input').append("<span class='error'> Please enter a valid email address </span>"))
+            $('.landing-wrapper').append("<span class='error'> Please enter a valid email address </span>"))
     else 
-      $('#input').append("<span class='error'> Please enter a valid email address </span>")
+      if $('.error').length is 0
+        $('.landing-wrapper').append("<span class='error'> Please enter a valid email address </span>")
       
 
   renderMain = ->
@@ -42,4 +47,4 @@ $(document).ready ->
 
   success = ->
     $('.landing-wrapper').remove()
-    $('body').append("<div class='signed-up'> You'll here from us soon! </div>")
+    $('body').append("<div class='signed-up'> You'll hear from us soon! </div>")

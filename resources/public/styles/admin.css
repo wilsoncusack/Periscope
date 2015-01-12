@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'cheltenhm'; /*a name to be used later*/
+    src: url('fonts/ichlthmn.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'cheltenhm-book-bold'; /*a name to be used later*/
+    src: url('fonts/Cheltenham\ Bold\ Headline\ BT.ttf'); /*URL to font*/
+}
+#searchDiv {
+	text-align: center;
+}
+
+#searchBox {
+	width: 300px;
+	height: 30px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+#buttons {
+	position: relative;
+	text-align: center;
+	margin: 8px;
+}
+
+#clear {
+	font-family: 'cheltenhm', georgia, serif;
+	border: 1px solid black;
+	padding: 3px 15px 3px 15px;
+	cursor: pointer;
+}
+
+#publish {
+	font-family: 'cheltenhm', georgia, serif;
+	color: white;
+	padding: 4px 15px 4px 15px;
+}
+
+.disabled {
+	background-color: grey;
+}
+
+.enabled {
+	cursor: pointer;
+	background-color: #333;
+}
+
+#searchResults{
+	position: absolute;
+	width: 726px;
+	left: 50%;
+	margin-left: -363px;
+}
+
+.articleWrapper {
+	float: left;
+	margin: 10px;
+}
+
+.articleChooser{
+	padding: 10px;
+	width: 202px;
+	height: 100px;
+}
+
+.selected {
+	background-color: black;
+	color: white;
+}
+
+.selected>a{
+	text-decoration: none;
+	color: white;
+}
+
+.notSelected:hover{
+	background-color: rgba(0,0,0,.02)
+}
+.notSelected>.title {
+	font-family: georgia, serif;
+	text-decoration: none;
+	color: black
+}
+
+.articleChooser>.title:hover {
+	text-decoration: underline;
+}
+
+.publication{
+	margin: 5px 0px 0px 0px;
+	font-family: sans-serif;
+}
+
+.scores{
+	width: 110.5px;
+	height: 50px;
+	text-align: center	
+}
+
+.scores>h5 {
+	font-family: helvetica;
+	font-weight: 100;
+	margin: 3px 0px 0px 0px;
+}
+
+.scores>h4 {
+	font-family: "helvetica";
+	margin: 4px;
+}
+
+.polScore{
+	float: left;
+	background-color: red;
+}
+
+.posScore{
+	float: right;
+	background-color: lightgrey;
+}

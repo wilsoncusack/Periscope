@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Periscope</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+    <script src="Dependencies/mustache.js"></script>
+    <script src="Dependencies/chevron.js"></script>
+    <script src="adminMain.js"></script>
+    <link href="Templates/articleMini.mustache" rel="template" class="articles"/>
+    <link rel="stylesheet" type="text/css" href="styles/admin.css" />
+  </head>
+  <body>
+    <div id="date"> </div>
+    <div id="suggested"> </div>
+     <div id="searchDiv">
+      <input id="searchBox" name="search" placeholder="Use quotes to search for exact phrasing">
+      <div id="buttons">
+        <div id="clear" class="inline"> clear </div>
+        <div id="publish" class="inline disabled"> next </div>
+      </div>
+     </div>
+    <div id="searchResults"> </div>
+  </body>
+
+ </html>

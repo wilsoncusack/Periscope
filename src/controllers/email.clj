@@ -5,10 +5,11 @@
             [models.emails :as model]))
 
 (defn create
+  "When the email isn't blank, uses the model's create"
   [email]
   (when-not (str/blank? email)
     (model/create email)))
-  ;(ring/redirect "/"))
+  ;(ring/redirect "/")) ; example had this, don't think its needed
 
   (defroutes routes
     "defining the routes used for email signups,

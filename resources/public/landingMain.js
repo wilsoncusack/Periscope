@@ -9,6 +9,14 @@ $(document).ready(function() {
       $("#logo").on('click', function() {
         return renderMain();
       });
+      $("#email_address").on('keypress', function(e) {
+        var email;
+        if (e.keyCode !== 13) {
+          return;
+        }
+        email = $("input[name='email_input']").val();
+        return addEmail(email);
+      });
       return $("#email_button").on('click', function() {
         var email;
         email = $("input[name='email_input']").val();
@@ -29,11 +37,13 @@ $(document).ready(function() {
         } else if (data.status === 0) {
           return alreadyAdded();
         } else {
-          return $('#input').append("<span class='error'> Please enter a valid email address </span>");
+          return $('.landing-wrapper').append("<span class='error'> Please enter a valid email address </span>");
         }
       });
     } else {
-      return $('#input').append("<span class='error'> Please enter a valid email address </span>");
+      if ($('.error').length === 0) {
+        return $('.landing-wrapper').append("<span class='error'> Please enter a valid email address </span>");
+      }
     }
   };
   renderMain = function() {
@@ -53,6 +63,6 @@ $(document).ready(function() {
   };
   return success = function() {
     $('.landing-wrapper').remove();
-    return $('body').append("<div class='signed-up'> You'll here from us soon! </div>");
+    return $('body').append("<div class='signed-up'> You'll hear from us soon! </div>");
   };
 });
