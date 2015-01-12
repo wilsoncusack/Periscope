@@ -3,3 +3,5 @@
 (def server (periscope.web/-main))
 (require '[periscope.web]:reload)
 (def server (periscope.web/-main))
+(require '[periscope.web]:reload)
+(def server (periscope.web/-main))
