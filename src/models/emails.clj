@@ -23,4 +23,4 @@
     -1))
 
 (defn query [email]
-  (sql/query spec ["select * from emails where body = ?" email]))
+  (sql/query spec ["select * from emails where body = ?;" email]))
