@@ -3,7 +3,8 @@
   :url "http://clojure-getting-started.herokuapp.com"
   :license {:name "Eclipse Public License v1.0"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.6.0"]
+  :dependencies [[clj-mandrill "0.1.0"]
+                 [org.clojure/clojure "1.6.0"]
                  [org.clojure/java.jdbc "0.3.5"]
                  [postgresql "9.1-901-1.jdbc4"]
                  ;[org.postgresql/postgresql "9.2-1002-jdbc4"]
