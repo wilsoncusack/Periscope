@@ -1,6 +1,7 @@
 (ns models.emails
   (:require [clojure.string :as str]
-            [clojure.java.jdbc :as sql]))
+            [clojure.java.jdbc :as sql]
+            [periscope.email :as sendEmail]))
 
 (def spec (or (System/getenv "DATABASE_URL")
               "postgresql://localhost:5432/emails"))
@@ -19,6 +20,7 @@
            (< (Java.lang.String/.length email) 40))
     (do
       (sql/insert! spec :emails [:body] [email])
+      (sendEmail/betaSignup email)
       1)
     -1))
 
