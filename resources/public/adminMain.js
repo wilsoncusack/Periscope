@@ -9,6 +9,11 @@ $(document).ready(function() {
   $('#searchButton').on('click', function() {
     return search($('#searchBox').val());
   });
+  $("#next").on('click', function() {
+    if (toPublish.length > 0) {
+      return next();
+    }
+  });
   articleDict = {};
   toPublish = [];
   count = 0;
@@ -87,8 +92,8 @@ $(document).ready(function() {
       return removeArticle(e);
     });
     count += 1;
-    $('#publish').addClass('enabled');
-    return $('#publish').removeClass('disabled');
+    $('#next').addClass('enabled');
+    return $('#next').removeClass('disabled');
   };
   removeArticle = function(e) {
     var article, div, i, id;
@@ -113,11 +118,20 @@ $(document).ready(function() {
     }
     count -= 1;
     if (count < 1) {
-      $('#publish').addClass('disabled');
-      return $('#publish').removeClass('enabled');
+      $('#next').addClass('disabled');
+      return $('#next').removeClass('enabled');
     }
   };
   return next = function() {
-    return $('notSelected').remove();
+    $('#suggested').remove();
+    $('#searchDiv').remove();
+    $('#searchResults').remove();
+    return $(".toPublish").Chevron("render", {
+      articles: toPublish
+    }, (function(_this) {
+      return function(results) {
+        return $('body').append(results);
+      };
+    })(this));
   };
 });

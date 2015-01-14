@@ -18,7 +18,7 @@
   admin/routes
   ; root, looks in public directory and returns index.html
   (GET  "/" [] (resource-response "index.html" {:root "public"}))
-  ;(GET  "/admin" [] (resource-response "adminIndex.html" {:root "public"}))
+  (GET  "/admin" [] (resource-response "adminIndex.html" {:root "public"}))
   ; example of a get request
   ; receives the post request and parses input
 

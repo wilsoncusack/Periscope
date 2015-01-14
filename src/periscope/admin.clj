@@ -20,7 +20,7 @@
   I/P: word (string)
   O/P: JSON Object of DB response to String Query"
   [word]
-  (let [query "SELECT title, body, link, author, publication, politcalscore, posnegscore, datewritten, dateadded FROM articles WHERE title like ? or body like ?;"
+  (let [query "SELECT title, body, link, author, publication, political_score, pos_neg_score, date_written FROM articles WHERE title like ? or body like ?;"
         searchWord (clojure.string/join ["%" word "%"])] ;; won't work like this, need to concat here and get ridof %'s above ^
     (sql/query articles/spec [query searchWord searchWord])))
 

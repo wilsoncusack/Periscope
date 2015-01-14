@@ -1,0 +1,42 @@
+<div id="wrapper">
+	<div id="totalScore">
+		<h4 class="infoHeader">Net Total Political Score:
+		</h4>
+	</div>
+	<div id="infoWrapper">
+		{{! text field for title }}
+		<div>
+			<input id="title" name="title" placeholder="Topic Title">
+		</div>
+		{{! text field for description }}
+		<div>
+			<textarea type="text" name="description" id="description" placeholder="Enter a description of the topic"></textarea>
+		</div>
+
+		{{! image URL }}
+		<div>
+			<input id="imgURL" name="imgURL" placeholder="Image URL">
+		</div>
+	</div>
+
+	<div id="toPublishWrap">
+		{{# articles }}
+		<div class="articleWrapper">
+			<div class="articleChooser notSelected" id="{{ id }}">
+				<a href="{{link}}" target="_blank" class="title"> {{ title }} </a>
+				<h5 class="publication"> {{ publication }} </h5>
+				<h5 class="date"> {{ date_written }} </h5>
+			</div>
+			<div class="polScore scores">
+				<h5> Pol. Score </h5>
+				<h4> {{ political_score }} </h4>
+			</div>
+			<div class="posScore scores">
+				<h5> Pos. Score </h5>
+				<h4> {{ pos_neg_score }} </h4>
+			</div>
+			<textarea type="text" name="summary" class="summary" placeholder="Enter a summary of the article"></textarea>
+		</div>
+	{{/ articles }}
+	</div>
+</div>

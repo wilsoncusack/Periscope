@@ -23,6 +23,5 @@
                          [:publication :varchar "NOT NULL" "DEFAULT 0"]
                          [:political_score :int "NOT NULL" "DEFAULT 0"]
                          [:pos_neg_score :int "NOT NULL" "DEFAULT 0"]
-                         [:date_written :date "NOT NULL" "DEFAULT CURRENT_DATE"]
-                         [:date_added :timestamp "NOT NULL" "DEFAULT CURRENT_TIMESTAMP"]))
+                         [:date_written :date "NOT NULL" "DEFAULT CURRENT_DATE"]))
     (println " done")))

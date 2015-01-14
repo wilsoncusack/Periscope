@@ -6,4 +6,4 @@
               "postgresql://localhost:5432/wilsoncusack"))
 
 (defn all []
-  (into [] (sql/query spec ["select * from topic_articles order by id desc"])))
+  (into [] (sql/query spec ["select * from topic_articles order by id desc;"])))

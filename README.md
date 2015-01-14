@@ -40,4 +40,5 @@ For more information about using Clojure on Heroku, see these Dev Center article
 
 
 [PSQL Indexing](http://www.postgresql.org/docs/8.3/static/textsearch-tables.html)
+Seems like we should use the column approach http://www.postgresql.org/docs/8.3/static/textsearch-features.html#TEXTSEARCH-UPDATE-TRIGGERS
 

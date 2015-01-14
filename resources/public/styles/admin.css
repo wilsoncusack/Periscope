@@ -13,7 +13,8 @@
 
 #searchBox {
 	width: 300px;
-	height: 30px;
+	height: 22px;
+	font-size: 13px;
 }
 
 .inline {
@@ -33,7 +34,7 @@
 	cursor: pointer;
 }
 
-#publish {
+#next {
 	font-family: 'cheltenhm', georgia, serif;
 	color: white;
 	padding: 4px 15px 4px 15px;
@@ -119,4 +120,79 @@
 .posScore{
 	float: right;
 	background-color: lightgrey;
+}
+
+
+
+/***************************/
+/* PUBLISH PAGE BEGINS */
+#totalScore {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+
+#infoWrapper{
+	
+	margin-top: 20px;
+	width: 400px;
+	text-align: left;
+	/*position: absolute;
+	left: 50%;
+	margin-left: -175px;*/
+	margin: auto;
+}
+#title {
+	width: 400px;
+	height: 30px;
+	border: none;
+	border-bottom: 2px solid black;
+	font-size: 18px;
+}
+
+.infoHeader {
+	font-family: 'cheltenhm', helvetica, sans-serif;
+	margin: 10px 0px 2px 0px;
+	font-size: 10px;
+}
+
+#description{
+	width: 400px;
+	height: 150px;
+	color: #333;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+#imgURL{
+	width: 400px;
+	height: 30px;
+	border: none;
+	border-bottom: 2px solid black;
+	font-size: 12px;
+}
+
+#toPublishWrap{
+	margin-top: 20px;
+	width: 726px;
+	left: 50%;
+	margin-left: -363px;
+	position: absolute;
+}
+
+.summary {
+	width: 216px;
+	margin-top: 2px;
+}
+
+input:focus{
+	outline: 0;
+}
+
+textarea:focus{
+	outline: 0;
 }

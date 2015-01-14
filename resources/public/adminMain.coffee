@@ -4,6 +4,7 @@ $(document).ready ->
 		search($('#searchBox').val()) if e.keyCode == 13
 	)
 	$('#searchButton').on('click', -> search($('#searchBox').val()))
+	$("#next").on('click', -> next() if toPublish.length > 0)
 
 	articleDict = {}
 	toPublish = []
@@ -72,8 +73,8 @@ $(document).ready ->
 		$("#" + id).off()
 		$("#" + id).on('click', (e) -> removeArticle(e))
 		count += 1
-		$('#publish').addClass('enabled');
-		$('#publish').removeClass('disabled');
+		$('#next').addClass('enabled');
+		$('#next').removeClass('disabled');
 
 	# removes the article from the array of articles to publish 
 	# unhighlights on page
@@ -96,10 +97,15 @@ $(document).ready ->
 			i++
 		count -= 1
 		if count < 1
-			$('#publish').addClass('disabled');
-			$('#publish').removeClass('enabled');
+			$('#next').addClass('disabled');
+			$('#next').removeClass('enabled');
 
 	next = ->
-		$('notSelected').remove();
+		$('#suggested').remove();
+		$('#searchDiv').remove();
+		$('#searchResults').remove();
+
+		$(".toPublish").Chevron("render", articles: toPublish, (results) =>
+			$('body').append(results))
 
 
