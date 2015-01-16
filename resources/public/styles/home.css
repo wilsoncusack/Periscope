@@ -1,0 +1,218 @@
+@font-face {
+    font-family: 'cheltenhm'; /*a name to be used later*/
+    src: url('fonts/ichlthmn.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'cheltenhm-book-bold'; /*a name to be used later*/
+    src: url('fonts/Cheltenham\ Bold\ Headline\ BT.ttf'); /*URL to font*/
+}
+
+body{
+width: 80%;
+margin: auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+#topicList {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+/*class for the header text so the line up side by side rather than on top of each other*/
+.nav {
+	float: left;
+}
+
+#header{
+	float: left;
+	width: 100%;
+}
+
+/*Search and About*/
+#top_right {
+	position: relative;
+	color: grey;
+	float: right;
+	font-family: sans-serif;
+	font-weight: 600;
+/*	margin-right: 100px;*/	
+	margin-top: 42px;	
+}
+
+#top_right>p {
+	margin-left: 10px;
+	float: right;
+}
+
+#top_left {
+	color: black;
+	float:left;
+	vertical-align: top;
+	font-family: "cheltenhm-book-bold";
+	font-size: 30px;
+	margin: 0px 0px 0px 0px;
+}
+
+#top_left h3{
+	margin-bottom: -7px;
+  font-weight: normal;
+}
+
+/*red divider*/
+#divider {
+	width: 100%;
+	height: 2px;
+	background-color: black;
+	float: left;
+}
+
+
+.topic-header{
+	display: inline-block;	
+	width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center; 
+  opacity: .6; 
+  transition: opacity 140ms;   
+  border-bottom: 1px solid black; 
+}
+
+.topic-wrapper {
+	border-bottom: 2px solid black;
+}
+
+.topic-header:hover {
+  cursor: pointer;
+  opacity: 0.8; 
+
+}
+
+.topic-header.active {
+  opacity: 1;
+}
+
+.topic-title  {
+	font-family: "cheltenhm","Istok Web";
+	/*font-weight: 100;*/
+	font-size: 18px;
+  margin: auto;
+  width: 100px;
+  display: inline;   
+}
+
+.topic-title h2 {
+  font-weight: normal;
+  color: #333;
+}
+
+.active .topic-header{
+	color: #333;
+	opacity: 1;
+}
+
+.article-divider {
+	width: 100%;
+	height: 1px;
+	background-color: #4B4B49;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+}
+
+.topic_open {
+	display: none;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;	
+}
+
+ul {
+	list-style: none;
+	vertical-align: top;
+	margin: 0px;
+}
+
+.inner-item {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 1px;
+}
+
+.image-description {
+	width: 450px;
+	height: 300px;
+	margin-top: 0px;
+}
+
+img{
+	width: 450px;
+	height: 300px;
+	margin-top: 0px;
+}
+
+.description{
+	width: 450px;
+	height: 300px;
+	margin-top: 0px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	position: absolute;
+	opacity: .85;
+}
+
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+#top_right>p>a {
+	color: grey;
+}
+
+.article {
+	z-index: -1000;
+	width: 200px;
+	height: 100px;
+	padding: 1em 1em 1em 1em;
+	float: none;
+	font-family: "cheltenhm";
+	vertical-align: top;
+}
+
+.article:hover {
+	z-index: -1000;
+	background-color: #F8F8F8;
+}
+
+h4 {
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px 10px 0px 10px;
+}
+
+h5 {
+	font-weight: medium;
+	font-size: 11px;
+	margin: 3px 0px 0px 0px;
+	padding: 0px 10px 0px 10px;
+}
+
+.summary>p {
+	margin: 5px 0px 0px 0px;
+	padding: 0px 10px 0px 10px;
+	font-size: 12px;
+	font-family: times;
+}

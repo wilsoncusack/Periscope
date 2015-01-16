@@ -189,6 +189,23 @@
 	margin-top: 2px;
 }
 
+#publish {
+	width: 100px;
+	height: 34px;
+	color: white;
+	background-color: black;
+	position: absolute;
+	right: 5px;	
+	top: 5px;
+	text-align: center;
+	line-height: 34px;
+}
+
+#publish:hover {
+	background-color: red;
+	cursor: pointer;
+}
+
 input:focus{
 	outline: 0;
 }

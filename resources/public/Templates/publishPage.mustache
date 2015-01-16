@@ -21,8 +21,8 @@
 
 	<div id="toPublishWrap">
 		{{# articles }}
-		<div class="articleWrapper">
-			<div class="articleChooser notSelected" id="{{ id }}">
+		<div class="articleWrapper" id="{{ id }}">
+			<div class="articleChooser notSelected">
 				<a href="{{link}}" target="_blank" class="title"> {{ title }} </a>
 				<h5 class="publication"> {{ publication }} </h5>
 				<h5 class="date"> {{ date_written }} </h5>
@@ -39,4 +39,5 @@
 		</div>
 	{{/ articles }}
 	</div>
+	<div id="publish"> publish </div>
 </div>

@@ -5,7 +5,7 @@
 (defn migrated? []
   (-> (sql/query topicArticles/spec
                  [(str "select count(*) from information_schema.tables "
-                       "where table_name='articles'")])
+                       "where table_name='topic_articles'")])
       first :count pos?))
 
 (defn migrate []

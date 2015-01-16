@@ -29,7 +29,8 @@ $(document).ready ->
 	renderSearchRes = (data) -> 
 		counter = 0
 		for article in data
-			article.id = counter
+			article.id = counter # this seems like it should be optimized, not going to 
+			# touch now
 			articleDict[counter] = article
 			counter+=1
 		$(".articles").Chevron("render", articles: data, (results) =>
@@ -45,7 +46,6 @@ $(document).ready ->
 	# blue is negative, red is positive
 	# score is jQuery object of a polScore div 
 	colorScore = (div) -> 
-		console.log div
 		score = div.text()
 		if score > 0
 			div.css('background-color', 'rgb(' + score + ',0,0)')
@@ -105,7 +105,30 @@ $(document).ready ->
 		$('#searchDiv').remove();
 		$('#searchResults').remove();
 
+		i = 0
+		while i < toPublish.length
+			toPublish[i].id = i
+			i++
+
 		$(".toPublish").Chevron("render", articles: toPublish, (results) =>
-			$('body').append(results))
+			$('body').append(results)
+			$("#publish").on('click', => publish()))
+
+	publish = ->
+		title = $('#title').val()
+		description = $('#description').val()
+		imgURL = $('#imgURL').val()
+
+		i = 0
+		while i < toPublish.length
+			id = toPublish[i].id
+			summary = $("##{ id }>.summary").val()
+			toPublish[i].summary = summary
+			i++
+
+		console.log toPublish
+		articles = toPublish
+		toSend = {topic: {title: title, description: description, image: imgURL, articles: articles}}
+		$.post("/addTopic", toSend, (response) -> console.log response)
 
 

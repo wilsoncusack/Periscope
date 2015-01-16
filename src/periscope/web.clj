@@ -9,16 +9,20 @@
             [ring.middleware.json :as middleware]
             [ring.adapter.jetty :as jetty]
             [models.emailMigration :as emailMigration]
-            [models.articleMigration :as articleMigration]
+            [models.topicMigration :as topics]
+            [models.topicArticleMigration :as topicArticles]
             [periscope.admin :as admin]
+            [periscope.home :as home]
             [environ.core :refer [env]]))
 
 (defroutes app-routes
   signup/routes
   admin/routes
+  home/routes
   ; root, looks in public directory and returns index.html
   (GET  "/" [] (resource-response "index.html" {:root "public"}))
   (GET  "/admin" [] (resource-response "adminIndex.html" {:root "public"}))
+  (GET  "/home" [] (resource-response "home.html" {:root "public"}))
   ; example of a get request
   ; receives the post request and parses input
 
@@ -38,6 +42,8 @@
 
 (defn -main [& [port]]
   "from Heroku's setup"
+  (topics/migrate)
+  (topicArticles/migrate)
   (let [port (Integer. (or port (env :port) 5000))]
     (jetty/run-jetty (site #'app) {:port port :join? false})))
 
