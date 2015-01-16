@@ -21,6 +21,7 @@ $(document).ready ->
 			$("##{ id }").addClass('active')
 		else
 			$("##{ id }>.inner ").hide()
+			$("##{ id }").removeClass('active')
 
 	showDesc = (e) ->
 		id = e.currentTarget.id
@@ -31,3 +32,5 @@ $(document).ready ->
 		offset = $(e.currentTarget).offset()
 		$(".description").css('left', offset.left + "px")
 		$(".description").css('top', offset.top + "px")
+		$(".description").css('width', $("##{ id }").width)
+		$(".height").css('width', $("##{ id }").height)

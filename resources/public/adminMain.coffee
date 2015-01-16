@@ -115,6 +115,7 @@ $(document).ready ->
 			$("#publish").on('click', => publish()))
 
 	publish = ->
+		$('.wrapper').remove()
 		title = $('#title').val()
 		description = $('#description').val()
 		imgURL = $('#imgURL').val()

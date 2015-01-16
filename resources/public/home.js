@@ -32,7 +32,8 @@ $(document).ready(function() {
       $("#" + id + ">.inner ").show();
       return $("#" + id).addClass('active');
     } else {
-      return $("#" + id + ">.inner ").hide();
+      $("#" + id + ">.inner ").hide();
+      return $("#" + id).removeClass('active');
     }
   };
   return showDesc = function(e) {
@@ -44,6 +45,8 @@ $(document).ready(function() {
     $(".description").text(description);
     offset = $(e.currentTarget).offset();
     $(".description").css('left', offset.left + "px");
-    return $(".description").css('top', offset.top + "px");
+    $(".description").css('top', offset.top + "px");
+    $(".description").css('width', $("#" + id).width);
+    return $(".height").css('width', $("#" + id).height);
   };
 });

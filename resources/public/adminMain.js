@@ -144,6 +144,7 @@ $(document).ready(function() {
   };
   return publish = function() {
     var articles, description, i, id, imgURL, summary, title, toSend;
+    $('.wrapper').remove();
     title = $('#title').val();
     description = $('#description').val();
     imgURL = $('#imgURL').val();

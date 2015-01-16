@@ -12,17 +12,19 @@
 			<div class='image-description inner-item' id="desc{{ id }}"> 
 				<img src="{{ image }}">
 			</div>
+			<div class = "inner-item articles">
 			{{# articles }}
-			  <div class='article inner-item'>
+			  <div class='article'>
 			    <a href="{{ link }}" target='_blank'>
 			      <h4> {{ title }} </h4>
 			      <div class='summary'>
-			        <p> {{ description }} </p>
+			        <p> {{ summary }} </p>
 			        <h5> {{ publication }} </h5>
 			      </div>
 			    </a>
 			  </div>
 		  	{{/ articles }}
+		  	</div>
 		</div>
 	</div>
 	

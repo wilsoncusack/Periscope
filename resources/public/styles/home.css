@@ -150,19 +150,21 @@ ul {
 }
 
 .image-description {
-	width: 450px;
-	height: 300px;
-	margin-top: 0px;
+	/*width: 450px;*/
+	width: 40%;
+	/*height: 300px;*/
+	margin-top: 1px;
 }
 
 img{
-	width: 450px;
-	height: 300px;
+	width: 100%;
+	/*height: 300px;*/
 	margin-top: 0px;
 }
 
 .description{
-	width: 450px;
+	/* will not work for mobile, width isn't dynamic*/
+	width: 450px; 
 	height: 300px;
 	margin-top: 0px;
 	background-color: black;
@@ -182,6 +184,10 @@ a {
 	color: grey;
 }
 
+.articles {
+	width: 59%;
+}
+
 .article {
 	z-index: -1000;
 	width: 200px;
@@ -190,6 +196,7 @@ a {
 	float: none;
 	font-family: "cheltenhm";
 	vertical-align: top;
+	display: inline-block;
 }
 
 .article:hover {
