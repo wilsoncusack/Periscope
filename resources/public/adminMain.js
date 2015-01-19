@@ -144,7 +144,6 @@ $(document).ready(function() {
   };
   return publish = function() {
     var articles, description, i, id, imgURL, summary, title, toSend;
-    $('.wrapper').remove();
     title = $('#title').val();
     description = $('#description').val();
     imgURL = $('#imgURL').val();
@@ -165,8 +164,9 @@ $(document).ready(function() {
         articles: articles
       }
     };
-    return $.post("/addTopic", toSend, function(response) {
+    $.post("/addTopic", toSend, function(response) {
       return console.log(response);
     });
+    return $('.wrapper').remove();
   };
 });

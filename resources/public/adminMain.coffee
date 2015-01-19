@@ -115,7 +115,6 @@ $(document).ready ->
 			$("#publish").on('click', => publish()))
 
 	publish = ->
-		$('.wrapper').remove()
 		title = $('#title').val()
 		description = $('#description').val()
 		imgURL = $('#imgURL').val()
@@ -131,5 +130,6 @@ $(document).ready ->
 		articles = toPublish
 		toSend = {topic: {title: title, description: description, image: imgURL, articles: articles}}
 		$.post("/addTopic", toSend, (response) -> console.log response)
+		$('.wrapper').remove()
 
 
