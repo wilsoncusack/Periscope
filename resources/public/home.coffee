@@ -32,5 +32,6 @@ $(document).ready ->
 		offset = $(e.currentTarget).offset()
 		$(".description").css('left', offset.left + "px")
 		$(".description").css('top', offset.top + "px")
-		$(".description").css('width', $("##{ id }").width)
-		$(".height").css('width', $("##{ id }").height)
+		$(".description").css('width', $("##{ id }").width() + "px")
+		console.log $("##{ id }").width() 
+		$(".description").css('height', $("##{ id }").height() + "px")

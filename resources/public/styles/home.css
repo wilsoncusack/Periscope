@@ -164,8 +164,8 @@ img{
 
 .description{
 	/* will not work for mobile, width isn't dynamic*/
-	width: 450px; 
-	height: 300px;
+/*	width: 450px; 
+	height: 300px;*/
 	margin-top: 0px;
 	background-color: black;
 	color: white;

@@ -46,7 +46,8 @@ $(document).ready(function() {
     offset = $(e.currentTarget).offset();
     $(".description").css('left', offset.left + "px");
     $(".description").css('top', offset.top + "px");
-    $(".description").css('width', $("#" + id).width);
-    return $(".height").css('width', $("#" + id).height);
+    $(".description").css('width', $("#" + id).width() + "px");
+    console.log($("#" + id).width());
+    return $(".description").css('height', $("#" + id).height() + "px");
   };
 });
