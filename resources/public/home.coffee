@@ -10,22 +10,28 @@ $(document).ready ->
 		$(".topics").Chevron "render", topics: data, (result) =>
 			$('body').append(result)
 			$('.topic-wrapper').on('click', (e) -> 
+				console.log e.target.tagName
+				return if e.target.tagName is "A"
 				openCloseTopic(e))
+			$('.article').off()
 			$('.image-description').hover(((e) -> showDesc(e)), -> $(".description").remove())
 
 	openCloseTopic = (e) ->
 		id = e.currentTarget.id
 		inner = $("##{ id }>.inner ")
 		if inner.css('display') is "none"
-			$("##{ id }>.topic-header ").css('border-bottom', '3px solid lightgrey')
+			# $("##{ id }>.topic-header ").css('border-bottom', '3px solid #EAEAEA')
 			$("##{ id }>.inner ").show()
 			$("##{ id }>.inner ").animate({
-				height: "50%"
+				height: "300px"
 				}, 700)
 			$("##{ id }").addClass('active')
 		else
-			$("##{ id }>.topic-header ").css('border-bottom', 'none')
-			$("##{ id }>.inner ").hide()
+			$("##{ id }>.inner ").animate({
+				height: "0px"
+				}, 700).promise().done(-> 
+				# $("##{ id }>.topic-header ").css('border-bottom', 'none')
+				$("##{ id }>.inner ").hide())
 			$("##{ id }").removeClass('active')
 
 	showDesc = (e) ->

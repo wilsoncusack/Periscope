@@ -14,8 +14,13 @@ $(document).ready(function() {
       return function(result) {
         $('body').append(result);
         $('.topic-wrapper').on('click', function(e) {
+          console.log(e.target.tagName);
+          if (e.target.tagName === "A") {
+            return;
+          }
           return openCloseTopic(e);
         });
+        $('.article').off();
         return $('.image-description').hover((function(e) {
           return showDesc(e);
         }), function() {
@@ -29,15 +34,17 @@ $(document).ready(function() {
     id = e.currentTarget.id;
     inner = $("#" + id + ">.inner ");
     if (inner.css('display') === "none") {
-      $("#" + id + ">.topic-header ").css('border-bottom', '3px solid lightgrey');
       $("#" + id + ">.inner ").show();
       $("#" + id + ">.inner ").animate({
-        height: "50%"
+        height: "300px"
       }, 700);
       return $("#" + id).addClass('active');
     } else {
-      $("#" + id + ">.topic-header ").css('border-bottom', 'none');
-      $("#" + id + ">.inner ").hide();
+      $("#" + id + ">.inner ").animate({
+        height: "0px"
+      }, 700).promise().done(function() {
+        return $("#" + id + ">.inner ").hide();
+      });
       return $("#" + id).removeClass('active');
     }
   };

@@ -93,7 +93,7 @@ margin: auto;
 	width: 90%;
 	margin:	10px auto 10px auto;
 	background-color: white;
-	border-bottom: 2px solid lightgrey;
+	border-bottom: 3px solid #EAEAEA;
 	/*border-color: #e5e6e9 #dfe0e4 #d0d1d5;*/
 }
 
@@ -153,7 +153,8 @@ ul {
 
 .inner {
 	background-color: #EAEAEA;
-	height: 0%;
+	height: 0px;
+	overflow: auto;
 }
 
 .inner-item {
@@ -189,7 +190,7 @@ img{
 .new-description {
 	background-color: white;
 	width: 450px;
-	height: 300px;
+	height: 279px;
 	margin: 10px;
 }
 
