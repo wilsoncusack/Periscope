@@ -29,9 +29,14 @@ $(document).ready(function() {
     id = e.currentTarget.id;
     inner = $("#" + id + ">.inner ");
     if (inner.css('display') === "none") {
+      $("#" + id + ">.topic-header ").css('border-bottom', '3px solid lightgrey');
       $("#" + id + ">.inner ").show();
+      $("#" + id + ">.inner ").animate({
+        height: "50%"
+      }, 700);
       return $("#" + id).addClass('active');
     } else {
+      $("#" + id + ">.topic-header ").css('border-bottom', 'none');
       $("#" + id + ">.inner ").hide();
       return $("#" + id).removeClass('active');
     }

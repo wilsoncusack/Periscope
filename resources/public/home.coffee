@@ -17,9 +17,14 @@ $(document).ready ->
 		id = e.currentTarget.id
 		inner = $("##{ id }>.inner ")
 		if inner.css('display') is "none"
+			$("##{ id }>.topic-header ").css('border-bottom', '3px solid lightgrey')
 			$("##{ id }>.inner ").show()
+			$("##{ id }>.inner ").animate({
+				height: "50%"
+				}, 700)
 			$("##{ id }").addClass('active')
 		else
+			$("##{ id }>.topic-header ").css('border-bottom', 'none')
 			$("##{ id }>.inner ").hide()
 			$("##{ id }").removeClass('active')
 

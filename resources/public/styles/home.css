@@ -9,7 +9,8 @@
 }
 
 body{
-width: 80%;
+background-color: #F8F8F8;
+/*background-color: #F9F9F9;*/
 margin: auto;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -83,12 +84,18 @@ margin: auto;
   text-align: center; 
   opacity: .6; 
   transition: opacity 140ms;   
-  border-bottom: 1px solid black; 
+  /*border-bottom: 1px solid black; */
 }
 
 .topic-wrapper {
-	border-bottom: 2px solid black;
+	/*border-bottom: 2px solid black;*/
+	width: 90%;
+	margin:	10px auto 10px auto;
+	background-color: white;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
 }
+
 
 .topic-header:hover {
   cursor: pointer;
@@ -143,10 +150,14 @@ ul {
 	margin: 0px;
 }
 
+.inner {
+	background-color: #EAEAEA;
+	height: 0%;
+}
+
 .inner-item {
 	display: inline-block;
 	vertical-align: top;
-	margin-top: 1px;
 }
 
 .image-description {
@@ -174,6 +185,13 @@ img{
 	opacity: .85;
 }
 
+.new-description {
+	background-color: white;
+	width: 450px;
+	height: 300px;
+	margin: 10px;
+}
+
 
 a {
 	text-decoration: none;
@@ -195,19 +213,24 @@ a {
 	padding: 1em 1em 1em 1em;
 	float: none;
 	font-family: "cheltenhm";
+	font-weight: normal;
 	vertical-align: top;
 	display: inline-block;
+	margin: 10px 5px 5px 5px;
+	background-color: white;
 }
 
 .article:hover {
 	z-index: -1000;
-	background-color: #F8F8F8;
+	/*background-color: #F8F8F8;*/
+	box-shadow: 0px 0px 5px -2px;
 }
 
 h4 {
 	font-size: 14px;
 	margin: 0px;
 	padding: 0px 10px 0px 10px;
+	font-weight: normal;
 }
 
 h5 {
@@ -220,6 +243,6 @@ h5 {
 .summary>p {
 	margin: 5px 0px 0px 0px;
 	padding: 0px 10px 0px 10px;
-	font-size: 12px;
+	font-size: 13px;
 	font-family: times;
 }
