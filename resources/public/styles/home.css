@@ -34,8 +34,21 @@ margin: auto;
 }
 
 #header{
-	float: left;
+	position: fixed;
+	height: 50px;
+	/*background-color: white;*/
 	width: 100%;
+	top: 0;
+	text-align: center;
+}
+
+#logo{
+	width: 80px;
+	margin: 0;
+	position: absolute;
+	left: 50%;
+	margin-left: -40px;
+	margin-top: -12px
 }
 
 /*Search and About*/
@@ -93,8 +106,12 @@ margin: auto;
 	width: 90%;
 	margin:	10px auto 10px auto;
 	background-color: white;
-	border-bottom: 3px solid #EAEAEA;
+	border-bottom: 2px solid lightgrey;
 	/*border-color: #e5e6e9 #dfe0e4 #d0d1d5;*/
+}
+
+.topics-wrapper{
+	margin-top: 110px;
 }
 
 

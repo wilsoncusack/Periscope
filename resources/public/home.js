@@ -34,15 +34,17 @@ $(document).ready(function() {
     id = e.currentTarget.id;
     inner = $("#" + id + ">.inner ");
     if (inner.css('display') === "none") {
+      $("#" + id + ">.topic-header ").css('border-bottom', '3px solid lightgrey');
       $("#" + id + ">.inner ").show();
       $("#" + id + ">.inner ").animate({
         height: "300px"
-      }, 700);
+      }, 300);
       return $("#" + id).addClass('active');
     } else {
       $("#" + id + ">.inner ").animate({
         height: "0px"
-      }, 700).promise().done(function() {
+      }, 300).promise().done(function() {
+        $("#" + id + ">.topic-header ").css('border-bottom', 'none');
         return $("#" + id + ">.inner ").hide();
       });
       return $("#" + id).removeClass('active');
