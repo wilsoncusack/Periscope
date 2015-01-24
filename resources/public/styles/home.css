@@ -128,7 +128,8 @@ margin: auto;
 .topic-title  {
 	font-family: "cheltenhm","Istok Web";
 	/*font-weight: 100;*/
-	font-size: 18px;
+	/*font-size: 18px;*/
+	font-size: 1.4em;
   margin: auto;
   width: 100px;
   display: inline;   
@@ -264,4 +265,29 @@ h5 {
 	padding: 0px 10px 0px 10px;
 	font-size: 13px;
 	font-family: times;
+}
+
+@media only screen and (max-device-width: 480px) {
+	.topic-title{
+		font-size: 3em
+	}
+	.new-description {
+		width: 98%;
+	}
+	.articles {
+		width: 95%;
+	}
+	.article {
+		width: 100%;
+		height: auto;
+	}
+	h4 {
+		font-size: 2em;
+	}
+	.summary>p{
+		font-size: 1.8em;
+	}
+	h5 {
+		font-size: 1.5em;
+	}
 }
