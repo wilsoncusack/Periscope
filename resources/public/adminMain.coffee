@@ -29,7 +29,8 @@ $(document).ready ->
 	renderSearchRes = (data) -> 
 		counter = 0
 		for article in data
-			article.id = counter # this seems like it should be optimized, not going to 
+			article.id = counter # this seems like it should be optimized, not going to
+			article.date_written = article.date_written.split("T")[0]
 			# touch now
 			articleDict[counter] = article
 			counter+=1
@@ -46,11 +47,14 @@ $(document).ready ->
 	# blue is negative, red is positive
 	# score is jQuery object of a polScore div 
 	colorScore = (div) -> 
-		score = div.text()
+		score = Number div.find('h4').text()
+		console.log score
+		console.log score < 0
 		if score > 0
 			div.css('background-color', 'rgb(' + score + ',0,0)')
 		else if score < 0
-			div.css('background-color', 'rgb(0,0,' + score + ')')
+			div.css('background-color', 'rgb(0,0,' + Math.abs(score) + ')')
+			console.log 'rgb(0,0,' + score + ')'
 		else 
 			div.css('background-color', 'lightgrey')
 

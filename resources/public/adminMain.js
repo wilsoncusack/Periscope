@@ -38,6 +38,7 @@ $(document).ready(function() {
     for (_i = 0, _len = data.length; _i < _len; _i++) {
       article = data[_i];
       article.id = counter;
+      article.date_written = article.date_written.split("T")[0];
       articleDict[counter] = article;
       counter += 1;
     }
@@ -62,11 +63,14 @@ $(document).ready(function() {
   };
   colorScore = function(div) {
     var score;
-    score = div.text();
+    score = Number(div.find('h4').text());
+    console.log(score);
+    console.log(score < 0);
     if (score > 0) {
       return div.css('background-color', 'rgb(' + score + ',0,0)');
     } else if (score < 0) {
-      return div.css('background-color', 'rgb(0,0,' + score + ')');
+      div.css('background-color', 'rgb(0,0,' + Math.abs(score) + ')');
+      return console.log('rgb(0,0,' + score + ')');
     } else {
       return div.css('background-color', 'lightgrey');
     }

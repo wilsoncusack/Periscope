@@ -34,7 +34,7 @@ margin: auto;
 }
 
 #header{
-	position: fixed;
+	/*position: fixed;*/
 	height: 50px;
 	/*background-color: white;*/
 	width: 100%;
@@ -205,11 +205,18 @@ img{
 	opacity: .85;
 }
 
-.new-description {
+.new-description-wrapper {
 	background-color: white;
 	width: 450px;
 	height: 279px;
 	margin: 10px;
+}
+
+.new-description{
+	width: 80%;
+	margin-top: 20%;
+	margin-left: 25px;
+	font-family: "cheltenhm";
 }
 
 
